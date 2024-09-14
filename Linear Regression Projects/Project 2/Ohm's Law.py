@@ -59,13 +59,28 @@ print(f"R^2 Score: {r2_score:.4f}")
 print(f"Estimated Resistance (Slope): {model.coef_[0]:.4f} Ohms")
 print(f"Voltage Offset (Intercept): {model.intercept_:.4f} Volts")
 
+# Value of current for which we want to predict voltage
+current_value = 12
+
+# Reshape the current value to match the expected input shape for the model
+current_value = np.array([[current_value]])
+
+# Use the trained model to predict the voltage at 12A
+predicted_voltage = model
+
+print(current_value,predicted_voltage)
+
+
 # Step 7: Visualize the Model's Predictions
 plt.scatter(x_train, y_train, label='Training Data', color='blue', alpha=0.7)
 plt.scatter(x_test, y_test, label='Testing Data', color='green', alpha=0.7)
 plt.plot(x_test, y_pred, label='Fitted Line', color='red', linewidth=2)
 plt.xlabel('Current (A)')
 plt.ylabel('Voltage (V)')
+
 plt.title('Current vs. Voltage with Fitted Line')
 plt.legend()
 plt.grid(True)
 plt.show()
+
+
