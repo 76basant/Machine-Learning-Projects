@@ -81,4 +81,4 @@ plt.title('Current vs. Voltage with Fitted Line and Predicted Value')
 plt.legend()
 plt.grid(True)
 plt.show()
-q
+
