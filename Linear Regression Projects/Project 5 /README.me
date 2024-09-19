@@ -1,12 +1,14 @@
-# Boyle's Law and Nonlinear Relationships: Approaches for Regression
+# Machine Learning Projects
 
-## Introduction
+## Boyle's Law and Nonlinear Relationships: Approaches for Regression
 
-When dealing with an inverse relationship such as \( P = \frac{c}{V} \), standard linear regression techniques are insufficient due to their inability to capture the nonlinear nature of the relationship. To improve model accuracy and achieve a high score (e.g., a high \( R^2 \)), various transformations and advanced regression techniques are necessary. This document explores different approaches to handle such nonlinear relationships and provides guidance on selecting appropriate regression models for Boyle's Law data.
+### Introduction
 
-## 1. Transformations for Linear Regression
+When dealing with an inverse relationship like \( P = \frac{c}{V} \), standard linear regression techniques are insufficient as they cannot capture the nonlinear nature of the relationship. To improve model accuracy and achieve a high score (e.g., a high \( R^2 \)), various transformations and advanced regression techniques are necessary. This document explores different approaches to handle such nonlinear relationships and provides guidance on selecting appropriate regression models for Boyle's Law data.
 
-### Why Transformations?
+### 1. Transformations for Linear Regression
+
+**Why Transformations?**
 
 Linear regression assumes a linear relationship between variables, but the equation \( P = \frac{c}{V} \) is nonlinear. To use linear regression effectively, you can transform the variables to make the relationship linear.
 
@@ -28,7 +30,7 @@ Taking the reciprocal of the volume \( V \) linearizes the inverse relationship 
 
 You can then apply linear regression to \( P \) and \( \frac{1}{V} \).
 
-## 2. Polynomial Regression
+### 2. Polynomial Regression
 
 Polynomial regression extends the linear regression model by incorporating powers of the independent variable to capture more complex patterns. This method is useful for data following a nonlinear pattern that is not necessarily exponential or logarithmic.
 
@@ -37,7 +39,7 @@ Polynomial regression extends the linear regression model by incorporating power
 
 For Boyle's Law, applying a second-degree polynomial (quadratic) regression might help to fit the inverse relationship more effectively.
 
-## 3. Exponential Regression
+### 3. Exponential Regression
 
 If your data follows an exponential decay or growth pattern, you can use exponential regression. This model is effective when the rate of change in pressure slows down as the volume increases.
 
@@ -51,43 +53,43 @@ You can linearize this by taking the natural logarithm of \( P \):
 
 By applying linear regression on the transformed data, you can model exponential relationships.
 
-## 4. Nonlinear Regression
+### 4. Nonlinear Regression
 
 When transformations do not effectively linearize the relationship between \( P \) and \( V \), you can apply nonlinear regression directly. Nonlinear least squares can fit the original model \( P = \frac{c}{V} \) without requiring any transformations.
 
-### Advantages
+**Advantages:**
 
 - Nonlinear regression provides flexibility to model complex relationships that cannot be linearized.
 - It is more computationally complex but can capture the precise relationship between variables.
 
-## 5. Support Vector Regression (SVR) with a Nonlinear Kernel
+### 5. Support Vector Regression (SVR) with a Nonlinear Kernel
 
 Support Vector Regression (SVR) is a powerful machine learning method that handles nonlinear relationships using nonlinear kernels. The Radial Basis Function (RBF) kernel is commonly used to capture complex, nonlinear dependencies between variables.
 
-### Why SVR?
+**Why SVR?**
 
 - SVR with an RBF kernel can model nonlinear relationships like \( P = \frac{c}{V} \) without requiring explicit transformations or assumptions about the functional form.
 
-## 6. Random Forest Regression
+### 6. Random Forest Regression
 
 Random Forest Regression is a nonlinear ensemble method that builds multiple decision trees and averages the results. It can capture complex relationships, including inverse proportionalities, without manual transformations or feature engineering.
 
-### Advantages
+**Advantages:**
 
 - Automatically models nonlinear relationships.
 - Handles a wide range of data patterns.
 - Resistant to overfitting due to averaging of multiple trees.
 
-## 7. Gradient Boosting Regression
+### 7. Gradient Boosting Regression
 
 Gradient Boosting Regression is another ensemble method similar to random forests but builds a series of trees sequentially, each correcting the errors of the previous ones. This approach efficiently models nonlinear relationships and improves accuracy for complex patterns.
 
-### Why Gradient Boosting?
+**Why Gradient Boosting?**
 
 - Works well for complex relationships.
 - Can achieve higher accuracy compared to random forests due to sequential learning.
 
-## Conclusion
+### Conclusion
 
 For Boyle's Law, where \( P \) and \( V \) are inversely proportional, linear regression alone will not provide accurate results. To model the data effectively, consider:
 
