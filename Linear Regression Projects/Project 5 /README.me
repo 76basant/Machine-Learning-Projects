@@ -1,40 +1,40 @@
-# Boyle's Law: Regression Techniques for Nonlinear Relationships
+# Boyle's Law and Regression Techniques
 
-## Introduction
+## Overview
 
-When dealing with an inverse relationship like \( P = \frac{c}{V} \), standard linear regression techniques won't capture this nonlinear behavior well. To improve the accuracy and achieve a high score (e.g., a high \( R^2 \)), you can transform the data or use advanced regression techniques that handle nonlinear relationships.
+When dealing with an inverse relationship like \( P = \frac{c}{V} \), standard linear regression is not sufficient due to its inability to capture nonlinear behavior. To improve the accuracy and achieve a high \( R^2 \), various data transformations and advanced regression techniques can be employed.
 
-## Approaches to Handle Nonlinear Relationships
+## Regression Techniques
 
 ### 1. Transformations for Linear Regression
 
-Linear regression requires a linear relationship between the variables. Since \( P = \frac{c}{V} \) is a nonlinear relationship, you can transform the variables to linearize the equation before applying linear regression.
+Linear regression assumes a linear relationship between the variables. Since \( P = \frac{c}{V} \) is nonlinear, you need to transform the variables to linearize the equation.
 
-#### Logarithmic Transformation:
+#### Logarithmic Transformation
 
-You can apply the logarithm to \( P \) or \( V \) to linearize the relationship.
+Apply the logarithm to either \( P \) or \( V \) to convert the inverse relationship into a linear one.
 
-**Model:**
+**Transformed Model:**
 \[
 \log(P) = \log(c) - \log(V)
 \]
 
-Apply linear regression on \( \log(P) \) and \( \log(V) \).
+Perform linear regression on \( \log(P) \) and \( \log(V) \).
 
-#### Reciprocal Transformation:
+#### Reciprocal Transformation
 
-Alternatively, take the reciprocal of \( V \) and apply linear regression.
+Take the reciprocal of \( V \) and apply linear regression.
 
-**Model:**
+**Transformed Model:**
 \[
 P = c \cdot \frac{1}{V}
 \]
 
-This transforms the nonlinear relationship into a linear one when plotting \( P \) against \( \frac{1}{V} \).
+This linearizes the relationship when plotting \( P \) against \( \frac{1}{V} \).
 
 ### 2. Polynomial Regression
 
-Polynomial regression fits data that follow a nonlinear pattern. Applying a second-degree polynomial (quadratic) regression can help model more complex relationships.
+Polynomial regression is useful for fitting data that follow a nonlinear pattern. For complex relationships, a polynomial regression model can be applied.
 
 **Model:**
 \[
@@ -43,43 +43,47 @@ P = a_0 + a_1 \cdot V + a_2 \cdot V^2
 
 ### 3. Exponential Regression
 
-If your data follows an exponential decay or growth pattern, exponential regression can capture this behavior.
+If the data suggest an exponential trend, exponential regression can be used. Linearize the model by taking the natural logarithm of \( P \).
 
 **Model:**
 \[
 P = a \cdot e^{bV}
 \]
 
-Linearize the model:
+**Linearized Model:**
 \[
 \log(P) = \log(a) + b \cdot V
 \]
 
 ### 4. Nonlinear Regression
 
-When transformations don't sufficiently linearize the relationship, apply nonlinear regression to directly model the relationship between \( P \) and \( V \).
+When transformations fail to linearize the relationship, nonlinear regression directly models the relationship.
 
 **Model:**
 \[
 P = \frac{c}{V}
 \]
 
-### 5. Support Vector Regression (SVR) with a Nonlinear Kernel
+### 5. Support Vector Regression (SVR) with Nonlinear Kernels
 
-Support Vector Regression (SVR) with a nonlinear kernel, such as the **Radial Basis Function (RBF)**, can capture more complex nonlinear relationships.
+SVR can capture complex nonlinear relationships by using kernels like the **Radial Basis Function (RBF)**.
 
 ### 6. Random Forest Regression
 
-Random Forest regression can automatically model nonlinear relationships, such as inverse proportionalities, without requiring transformations or feature engineering.
+Random Forest regression is a nonlinear ensemble method that models complex relationships without explicit transformations.
 
 ### 7. Gradient Boosting Regression
 
-Gradient Boosting builds a series of weak learners (decision trees) to model complex relationships, improving accuracy for nonlinear dependencies between \( P \) and \( V \).
+Gradient Boosting constructs a series of decision trees to model complex, nonlinear dependencies.
 
 ## Conclusion
 
-For Boyle's Law (\( P = \frac{c}{V} \)), standard linear regression won't provide accurate results due to the inverse nature of the relationship. Using the following approaches can improve accuracy:
-- **Logarithmic** or **reciprocal transformations** to linearize the data.
-- **Polynomial** or **exponential regression** to fit more complex relationships.
-- **Nonlinear regression** when transformations fail.
-- Machine learning methods like **SVR**, **Random Forest**, and **Gradient Boosting** to capture complex patterns without explicit transformations.
+For modeling Boyle's Law (\( P = \frac{c}{V} \)), standard linear regression is inadequate due to the inverse relationship. Effective approaches include:
+- **Transformations**: Logarithmic or reciprocal
+- **Polynomial Regression**: For capturing complex patterns
+- **Exponential Regression**: For data following exponential trends
+- **Nonlinear Regression**: Direct modeling of nonlinear relationships
+- **Advanced Techniques**: SVR, Random Forest, Gradient Boosting
+
+These methods will help improve accuracy and achieve better model performance.
+
