@@ -1,17 +1,15 @@
-
 # Machine Learning Projects
-## Linear Regression 
 
+## Linear Regression
 
+### Simple Regression Projects
 
-    - [Simple Regression Projects]()
+- **Physics Laws Projects**
+  - [Simple Pendulum](#)
+  - [Ohm's Law](#)
+  - [Hooke's Law](#)
 
-        - [Phyiscs Laws Projects]()
-            - [Simple Pendulum ]()
-            - [Ohm's Law]()
-            - [Hook's Law]()
-    - [Exponentional Linear Regression]()
-        - [Physics Laws Projects]()
-            - [Boyel's Law]()
+### Exponential Linear Regression
 
-<br/>
+- **Physics Laws Projects**
+  - [Boyle's Law](#)
