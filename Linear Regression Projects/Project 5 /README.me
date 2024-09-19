@@ -1,17 +1,14 @@
-
-# Python code to create a README.md file
-readme_content = """
 # Boyle's Law: Regression Techniques for Nonlinear Relationships
 
 ## Introduction
 
-When dealing with an inverse relationship like \( P = \\frac{c}{V} \), standard linear regression techniques won't capture this nonlinear behavior well. To improve the accuracy and achieve a high score (e.g., a high \( R^2 \)), you can transform the data or use advanced regression techniques that handle nonlinear relationships.
+When dealing with an inverse relationship like \( P = \frac{c}{V} \), standard linear regression techniques won't capture this nonlinear behavior well. To improve the accuracy and achieve a high score (e.g., a high \( R^2 \)), you can transform the data or use advanced regression techniques that handle nonlinear relationships.
 
 ## Approaches to Handle Nonlinear Relationships
 
 ### 1. Transformations for Linear Regression
 
-Linear regression requires a linear relationship between the variables. Since \( P = \\frac{c}{V} \) is a nonlinear relationship, you can transform the variables to linearize the equation before applying linear regression.
+Linear regression requires a linear relationship between the variables. Since \( P = \frac{c}{V} \) is a nonlinear relationship, you can transform the variables to linearize the equation before applying linear regression.
 
 #### Logarithmic Transformation:
 
@@ -19,10 +16,10 @@ You can apply the logarithm to \( P \) or \( V \) to linearize the relationship.
 
 **Model:**
 \[
-\\log(P) = \\log(c) - \\log(V)
+\log(P) = \log(c) - \log(V)
 \]
 
-Apply linear regression on \( \\log(P) \) and \( \\log(V) \).
+Apply linear regression on \( \log(P) \) and \( \log(V) \).
 
 #### Reciprocal Transformation:
 
@@ -30,10 +27,10 @@ Alternatively, take the reciprocal of \( V \) and apply linear regression.
 
 **Model:**
 \[
-P = c \\cdot \\frac{1}{V}
+P = c \cdot \frac{1}{V}
 \]
 
-This transforms the nonlinear relationship into a linear one when plotting \( P \) against \( \\frac{1}{V} \).
+This transforms the nonlinear relationship into a linear one when plotting \( P \) against \( \frac{1}{V} \).
 
 ### 2. Polynomial Regression
 
@@ -41,7 +38,7 @@ Polynomial regression fits data that follow a nonlinear pattern. Applying a seco
 
 **Model:**
 \[
-P = a_0 + a_1 \\cdot V + a_2 \\cdot V^2
+P = a_0 + a_1 \cdot V + a_2 \cdot V^2
 \]
 
 ### 3. Exponential Regression
@@ -50,12 +47,12 @@ If your data follows an exponential decay or growth pattern, exponential regress
 
 **Model:**
 \[
-P = a \\cdot e^{bV}
+P = a \cdot e^{bV}
 \]
 
 Linearize the model:
 \[
-\\log(P) = \\log(a) + b \\cdot V
+\log(P) = \log(a) + b \cdot V
 \]
 
 ### 4. Nonlinear Regression
@@ -64,7 +61,7 @@ When transformations don't sufficiently linearize the relationship, apply nonlin
 
 **Model:**
 \[
-P = \\frac{c}{V}
+P = \frac{c}{V}
 \]
 
 ### 5. Support Vector Regression (SVR) with a Nonlinear Kernel
@@ -81,9 +78,8 @@ Gradient Boosting builds a series of weak learners (decision trees) to model com
 
 ## Conclusion
 
-For Boyle's Law (\( P = \\frac{c}{V} \)), standard linear regression won't provide accurate results due to the inverse nature of the relationship. Using the following approaches can improve accuracy:
+For Boyle's Law (\( P = \frac{c}{V} \)), standard linear regression won't provide accurate results due to the inverse nature of the relationship. Using the following approaches can improve accuracy:
 - **Logarithmic** or **reciprocal transformations** to linearize the data.
 - **Polynomial** or **exponential regression** to fit more complex relationships.
 - **Nonlinear regression** when transformations fail.
 - Machine learning methods like **SVR**, **Random Forest**, and **Gradient Boosting** to capture complex patterns without explicit transformations.
-"""
