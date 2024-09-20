@@ -1,22 +1,12 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score
-from scipy.optimize import curve_fit
 
 # Example data for Boyle's Law (P = c/V)
 V_original = np.array([6, 5.7, 4.5, 4.4, 4])  # Volumes in cm^3
 P_original = np.array([10, 20, 30, 40, 50])   # Pressures in cm Hg
 
-plt.scatter(V_original,P_original)
-plt.plot(V_original,P_original)
-plt.xlabel('Volume (V)')
-plt.ylabel('Pressure (P)')
-plt.title('Original Data')
-
-plt.show()
 # Logarithmic Transformation: Apply log to both P and V
 log_V = np.log(V_original)
 log_P = np.log(P_original)
@@ -73,7 +63,12 @@ plt.tight_layout()
 plt.show()
 
 
-#PolynomialFeatures
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import r2_score
 
 # Original data for Boyle's Law (P = c/V)
 V_original = np.array([6, 5.7, 4.5, 4.4, 4])  # Volumes in cm^3
@@ -105,7 +100,11 @@ plt.legend()
 plt.show()
 
 
-#Exponentional Approaches
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 # Example data for Boyle's Law (P = c/V)
 V_original = np.array([6, 5.7, 4.5, 4.4, 4])  # Volumes in cm^3
@@ -137,7 +136,12 @@ plt.legend()
 plt.show()
 
 
-#Non-Linear Regression
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+from sklearn.metrics import r2_score
+
 # Example data for Boyle's Law (P = c/V)
 V_original = np.array([6, 5.7, 4.5, 4.4, 4])  # Volumes in cm^3
 P_original = np.array([10, 20, 30, 40, 50])   # Pressures in cm Hg
@@ -169,3 +173,4 @@ plt.ylabel('Pressure (P)')
 plt.title('Nonlinear Regression Fit: Boyle\'s Law (P = c/V)')
 plt.legend()
 plt.show()
+
