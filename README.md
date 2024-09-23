@@ -16,5 +16,5 @@
 
 ### Feature Scaling
   - Importance of feature scaling
-    - Types of feature scaling
+    - [Types of feature scaling](#)
 
