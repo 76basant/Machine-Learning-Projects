@@ -14,5 +14,6 @@
 - **Physics Laws Projects**
   - [Boyle's Law](#)
 
-### Feature Scalling
+### Feature Scaling
+  - Importance of feature scalling
 
