@@ -15,5 +15,6 @@
   - [Boyle's Law](#)
 
 ### Feature Scaling
-  - Importance of feature scalling
+  - Importance of feature scaling
+    - Types of feature scaling
 
