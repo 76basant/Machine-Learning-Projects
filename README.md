@@ -13,6 +13,7 @@
 
 - **Physics Laws Projects**
   - [Boyle's Law](#)
+  - [Decay alaw]
 
 ### Feature Scaling
   - Importance of feature scaling
