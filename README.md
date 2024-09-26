@@ -13,7 +13,7 @@
 
 - **Physics Laws Projects**
   - [Boyle's Law](#)
-  - [Decay alaw](#)
+  - [Rafioactive Decay Law](#)
   - [Charging polar capacitor](#)
   - [Discharging polar capacitor](#)
   - [cooling curve](#)
