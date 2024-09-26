@@ -13,9 +13,13 @@
 
 - **Physics Laws Projects**
   - [Boyle's Law](#)
-  - [Decay alaw]
+  - [Decay alaw](#)
+  - [Charging polar capacitor](#)
+  - [Discharging polar capacitor](#)
+  - [cooling curve](#)
+    
 
 ### Feature Scaling
   - Importance of feature scaling
     - [Types of feature scaling](#)
-
+1
