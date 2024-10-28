@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as pyplot
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
 
 #Linear Regression by scipy
 # Define the objective function for curve fitting
