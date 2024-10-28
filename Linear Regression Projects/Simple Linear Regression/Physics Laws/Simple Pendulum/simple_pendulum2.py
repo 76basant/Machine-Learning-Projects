@@ -54,7 +54,8 @@ plt.ylim(0, max(y) + step_y)
 # Labeling the axes and title
 plt.ylabel('$T^2$ (sec$^2$)')
 plt.xlabel('$L (cm)$')
-plt.title('Pendulum')
+
+plt.title('Linear Regression by using scipy')
 
 # Show legend and plot
 plt.legend()
@@ -87,19 +88,31 @@ y_pred =model_equation(data['x'])
 data2 = pd.DataFrame({'y_true': data['y'], 'y_predicted': y_pred})
 print("DataFrame:",data2)
 
+
+
 plt.figure(figsize=(10,6))
-plt.plot(data['x'],data['y'],'bo',markersize=10,markerfacecolor='w')
+plt.plot(data['x'],data['y'],'bo',markersize=10,markerfacecolor='w',label='Data Points')
 # linear regression line
-plt.scatter(data['x'],y_pred,color='red')
+plt.scatter(data['x'],y_pred,color='red',label='Linear Regression')
 plt.plot(data['x'],y_pred,'ro')
-#
+plt.plot(data['x'],y_pred,'r')
+
 #plt.plot(data['x'],y_pred,'ro',markersize=15,markerfacecolor='w',alpha=0.8)
 #plt.plot(data['x'],y_pred,'r')
 
 #plt.plot(data['x'],y_pred,'ro')
 
-plt.xlabel('independent')
-plt.ylabel('dependent')
+scgs=((2*np.pi)**2/b)
+# Add annotation with a box
+text = "$g$= " + str(round(scgs, 2)) + "$cm/sec^2$"
+plt.annotate(text, xy=(30, 3), fontsize=18, color='blue',
+             bbox=dict(boxstyle='round,pad=0.9', edgecolor='black', facecolor='white'))
+
+
+plt.ylabel('$T^2$ (sec$^2$)')
+plt.xlabel('$L (cm)$')
+plt.legend()
+plt.title('Linear Regression Manual')
 plt.grid()
 plt.show()
 
@@ -115,21 +128,32 @@ model = LinearRegression()
 model.fit(X,y)
 print('Model trained or fitted sucessfully')
 
-# intercept , slope
-print(model.intercept_ , model.coef_ )
+# Output intercept and coefficients
+print("Intercept:", model.intercept_)
+print("Slope:", model.coef_)
+print("Coefficient List:", model.coef_.tolist())
 
 # prediction
 y_pred_sk = model.predict(X)
 
 plt.figure(figsize=(10,6))
-plt.plot(df['x'],df['y'],'bo',markersize=10,markerfacecolor='w')
+plt.plot(df['x'],df['y'],'bo',markersize=10,markerfacecolor='w',label='Data Points')
 # linear regression line
-plt.plot(df['x'],y_pred_sk,'go',markersize=15,markerfacecolor='w',alpha=0.8)
+plt.plot(df['x'],y_pred_sk,'go',markersize=10,markerfacecolor='w',alpha=0.8,label='Linear regression')
 plt.plot(df['x'],y_pred_sk,'g')
-plt.plot(df['x'],y_pred_sk,'go')
 
 
-plt.xlabel('independent')
-plt.ylabel('dependent')
+
+# Calculate `scgs` and annotate
+scgs = (2 * np.pi)**2 / model.coef_[0]  # Access the first coefficient if model.coef_ is an array
+# Add annotation with a box
+text = "$g$= " + str(round(scgs, 2)) + "$cm/sec^2$"
+plt.annotate(text, xy=(30, 3), fontsize=18, color='blue',
+             bbox=dict(boxstyle='round,pad=0.9', edgecolor='black', facecolor='white'))
+
+plt.ylabel('$T^2$ (sec$^2$)')
+plt.xlabel('$L (cm)$')
+plt.legend()
+plt.title('Linear Regression by Scikit Learn')
 plt.grid()
 plt.show()
