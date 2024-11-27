@@ -183,26 +183,3 @@ plt.show()
 
 
 
-# df['y']
-def sum_of_square(y_value):
-  mean_y = y_value.mean()
-  ss = np.sum(np.square(y_value - mean_y))
-  return ss
-
-SST = sum_of_square(data['y'])
-print(SST)
-
-SSR = sum_of_square(y_predict)
-print(SSR)
-
-#SSE = SST - SSR
-SSE = np.sum(np.square(data['y'] - y_predict))
-print(SSE)
-
-# MSE ( Mean Square Square)
-n = len(data)
-k = 1 # no. of independent variable
-MSE = SSE / (n-k)
-print(MSE)
-
-
